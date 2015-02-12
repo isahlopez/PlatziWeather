@@ -1,0 +1,77 @@
+html { font-family: 'Ovo', serif; font-size: 110%; }
+
+@media all and (max-width: 400px) { /*min-width: Desde 0 hasta 400*/
+  html { font-size: 80%; } }
+body { margin: 0; padding: 0; }
+
+.main-header { text-align: center; background: #16210b; color: white; padding: 4em; }
+
+.main-header__title { margin: 0; }
+
+.main-header__subtitle { font-size: 1rem; font-weight: normal; }
+
+@media screen and (max-width: 400px) { .main-header { background: black; } }
+.cards-group { margin: 0; }
+
+.card { height: 50vh; width: 100%; background-repeat: no-repeat; background-position: center; background-size: cover; margin: 0; padding: 0.4em; color: white; font-family: 'Megrim', cursive; text-shadow: 3px 3px 0px #2c2e38; position: relative; -webkit-box-sizing: border-box; -moz-bpx-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; -webkit-justify-content: space-around; -moz-justify-content: space-around; justify-content: space-around; }
+
+.card[data-city="pty"] { background-image: url("../images/pty.jpg"); }
+
+@media screen and (max-width: 42em) { .card[data-city="pty"] { background-image: url("../images/Panama-small.jpg"); } }
+.card__title { margin: 0; text-align: center; font-size: 2rem; }
+
+.card__date { font-size: 1rem; margin: 0; text-align: center; }
+
+.card__info { position: absolute; /* Con top y left 0 se va arriba, debemos colocarle a su contenedor position relative*/ /*top:0;
+left: 0;*/ /*Luego lo ubicamos donde queremos*/ bottom: 0.4em; left: 0.4em; text-align: center; padding: 0 .5em; padding-bottom: .5em; }
+
+.card__image { display: block; /*Coloca uno debajo del otro*/ margin-left: 0.4em; }
+
+.card__temp { display: block; font-size: 3rem; line-height: 1; /*Por defecto es de 1.5*/ }
+
+.card__maxtemp { display: block; }
+
+.card__maxtemp::before { content: "Max: "; }
+
+.card__mintemp::before { content: "Min: "; }
+
+/*	
+.weather-card{
+	background: #80EAE8;
+	padding: .5em;*/
+/*8px*/
+/*}
+
+	.weather-card__header{
+		margin: 0;
+	}
+
+	.weather-card__date{
+		border-bottom: 1px solid #D380EA;
+		display: block;
+		font-weight: normal;
+		font-size: 12px;
+		font-family: courier;
+		margin: 0 0 .5em 0;
+	}
+
+	.weather-card__footer{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.temperature::after{
+		content: attr(data-unidad);
+		font-size: 12px;
+		font-family: courier;
+		color: red;
+	}
+
+
+
+	.weather-card__footer::after{
+		content: "++++";
+	};*/
+
+/*# sourceMappingURL=style.css.map */
