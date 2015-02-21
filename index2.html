@@ -7,8 +7,6 @@
 	<title>Time Weather</title>
 	<link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="scss/style.css">
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -17,22 +15,16 @@
 		<h1 class="main-header__title">Time Weadther</h1>
 		<h2 class="main-header__subtitle">An awesome way to see how we burn by global warming</h2>
 	</header>
-	
-
-	<form action="" class="search">
-		<input type="text" class="search__text" placeholder="Add a new city..." data-input="cityAdd"/>
-		<input type="submit" class="search__btn btn" value="Search" data-button="add">
-		<button data-saved-cities class="search__btn btn">View saved cities</button>
-	</form>
-	
 	<div class="loader">Geolocalizando tu posición, por favor espera...</div>
+	
+	
 	<main class="cards-group ">
 		<template id="template--city">
 			<div class="card" data-image="sky"> 
 				<header class="card__header">
 					<h3 data-ciudad class="card__title"></h3>
-					<h4 data-date class="card__date"></h4>
 					<h4 data-time class="card__time"></h4>
+					<h4 data-date class="card__date"></h4>
 				</header>
 				<div class="card__info">
 					<img data-icon src="" alt="" class="card__image">
@@ -43,12 +35,22 @@
 			</div>
 		</template>
 	</main>
-	<section id="cards"></section>
-<!--
-	<footer class="footer">
-		<p class="footer-copy">Copyright&copy; 2015. By <a href="https://twitter.com/marihlopez" target="_blank" class="footer-copy utility-link">@marihlopez </a> .Todos los derechos reservados.</p>
-	</footer>
 
+
+	
+	<!--<article class="weather-card">
+		<h3="weather-card__header">Barquisimeto</h3>
+		<h4 class="weather-card__date">March, 25th</h4>
+		<img src="weather-card__image" class=""/>
+		<ul class="weather-card__footer">
+			<li class="weather-card__footer__item temperature" data-unidad="C">5</li>
+			<li class="weather-card__footer__item">Elemento 2</li>
+			<li class="weather-card__footer__item">Elemento 3</li>
+			<li class="weather-card__footer__item">Elemento 4</li>
+		</ul>
+
+		
+	</article>
 -->
 
 
@@ -57,5 +59,4 @@
 
 
 </body>
-
 </html>

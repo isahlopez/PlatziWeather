@@ -51,6 +51,9 @@ body{
 		}
 	}
 
+.loader{
+	text-align: center;
+}
 .cards-group
 {
 	margin: 0;
@@ -66,6 +69,7 @@ body{
 		color: white;
 		font-family: 'Megrim', cursive;
 		text-shadow:3px 3px 0px #2c2e38;
+
 		position: relative;
 		@include box-sizing;
 		@include flexbox;
@@ -130,6 +134,16 @@ body{
 	.card__mintemp::before{
 		content: "Min: ";
 	}
+
+
+
+	.card__maxtemp::after{
+		content: " ºC";
+	}
+	.card__mintemp::after{
+		content: " ºC";
+	}
+
 
 
 /*	
