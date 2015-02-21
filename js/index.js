@@ -165,9 +165,11 @@
 	};
 
 	function getWeatherNewCity(data){
+			
+			$.getJSON(API_WORLDTIME + $( newCity ).val(), function(data2){
 			//var t= getTimeNewCity($( newCity ).val());
 			//console.log (t);
-			//$( newCity ).val(" ");
+			$( newCity ).val(" ");
 			cityWeather = {};
 			cityWeather.zone = data.name;
 			cityWeather.icon = WEATHER_ICON + data.weather[0].icon + ".png";
@@ -177,27 +179,26 @@
 			cityWeather.main = data.weather[0].main;
 			//console.log(data2);
 			//render
-			//time = data2.data.time_zone[0].localtime;
-			renderTemplate(cityWeather, getTimeNewCity($( newCity ).val()));
+			var time = data2.data.time_zone[0].localtime;
+			renderTemplate(cityWeather, time);
 			
 			cities.push(cityWeather); //push Permite guardar elementos en un arreglo 
 			//Convertimos el objeto en string.
 			var obj = JSON.stringify(cities);
 			//Almacenamos el elemento en localStorage 
 			localStorage.setItem("cities", obj); //Clave: cities
-
+			});
 		
 	};
 
-	function getTimeNewCity(nameCity){
+	/*function getTimeNewCity(nameCity){
 
 		$.getJSON(API_WORLDTIME + nameCity, function(data2){
 		time = data2.data.time_zone[0].localtime;
-		
 		});
 		return time;
 		console.log(time);
-	}
+	}*/
 
 	function showSavedCities(event){
 		event.preventDefault();
@@ -206,9 +207,9 @@
 				console.log(cities);
 				console.log(city.zone);
 				var name = city.zone;
-				var t = getTimeNewCity(name);
+				//var t = getTimeNewCity(name);
 				console.log(t);
-				renderTemplate(city, t);
+				renderTemplate(city);
 			});	
 		};
 		var cities = JSON.parse(localStorage.getItem("cities")); //Parse convierte el string en array
@@ -276,15 +277,4 @@ function loadCities(event){
 
 
 
-  /*
-  En el localStorage tienes un string
-[11:55:44] Xavier: Ese string le conviertes es un array con el parsr
-[11:55:44] Xavier: Parse
-[11:56:04] Xavier: A ese array le recorres con un foreach
-  Dentro del foreacu ya tienes en cada iteracion una ciudad gardada
-[11:56:43] Xavier: Es decir un objeto ciudad
-  Ese objeto tiene un atributo q te da el nombre
-  Ese atributo creo q se llamaba zone
-[11:57:35] Xavier: Ebtonces escribes
-Con ese nombre llamas a la funcion q busque la hora
-[11:58:33] Xavier: Y mandas a renderizar*/
+ 
